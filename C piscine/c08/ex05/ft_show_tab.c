@@ -1,15 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_show_tab.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baboulou <baboulou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 10:46:18 by baboulou          #+#    #+#             */
-/*   Updated: 2022/06/23 01:04:04 by baboulou         ###   ########.fr       */
+/*   Created: 2022/06/23 01:02:49 by baboulou          #+#    #+#             */
+/*   Updated: 2022/06/23 01:10:45 by baboulou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <ft_stock_str.h>
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -30,4 +31,29 @@ void	ft_putnbr(int nb)
 	if (n > 9)
 		ft_putnbr(n / 10);
 	ft_putchar((n % 10) + 48);
+}
+
+void	ft_putstr(char *str)
+{
+	while (*str != '\0')
+	{
+		write(1, str, 1);
+		str++;
+	}
+}
+
+void	ft_show_tab(struct s_stock_str *par)
+{
+	int	i;
+
+	i = 0;
+	while (par[i].str != 0)
+	{
+		ft_putstr(par[i].str);
+		ft_putchar('\n');
+		ft_putnbr(par[i].size);
+		ft_putchar('\n');
+		ft_putstr(par[i].copy);
+		ft_putchar('\n');
+	}
 }
