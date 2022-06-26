@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: baboulou <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 20:07:48 by baboulou          #+#    #+#             */
-/*   Updated: 2022/06/09 23:49:25 by baboulou         ###   ########.fr       */
+/*   Created: 2022/06/09 18:28:51 by baboulou          #+#    #+#             */
+/*   Updated: 2022/06/09 23:45:01 by baboulou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-int	ft_strlen(char *str)
+void	ft_swap(int *a, int *b)
 {
-	int	count;
+	int	temp;
 
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }

@@ -6,13 +6,13 @@
 /*   By: baboulou <baboulou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/21 18:50:16 by baboulou          #+#    #+#             */
-/*   Updated: 2022/06/21 18:55:25 by baboulou         ###   ########.fr       */
+/*   Updated: 2022/06/24 13:27:43 by baboulou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_ABS_H
 
 # define FT_ABS_H
-# define ABS(value) (value > 0 ? -value : value)
+# define ABS(value) ((value < 0) ? ((-1) * value) : value)
 
 #endif

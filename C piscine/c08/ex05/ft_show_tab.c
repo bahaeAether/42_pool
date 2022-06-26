@@ -6,11 +6,11 @@
 /*   By: baboulou <baboulou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 01:02:49 by baboulou          #+#    #+#             */
-/*   Updated: 2022/06/23 01:10:45 by baboulou         ###   ########.fr       */
+/*   Updated: 2022/06/24 14:56:37 by baboulou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <ft_stock_str.h>
+#include "ft_stock_str.h"
 #include <unistd.h>
 
 void	ft_putchar(char c)
@@ -55,5 +55,6 @@ void	ft_show_tab(struct s_stock_str *par)
 		ft_putchar('\n');
 		ft_putstr(par[i].copy);
 		ft_putchar('\n');
+		i++;
 	}
 }

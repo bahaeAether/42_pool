@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft.h                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: baboulou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: baboulou <baboulou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/09 20:07:48 by baboulou          #+#    #+#             */
-/*   Updated: 2022/06/09 23:49:25 by baboulou         ###   ########.fr       */
+/*   Created: 2022/06/21 18:10:11 by baboulou          #+#    #+#             */
+/*   Updated: 2022/06/21 18:45:56 by baboulou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#ifndef FT_H
+# define FT_H
 
-int	ft_strlen(char *str)
-{
-	int	count;
+void	ft_putchar(char c);
+void	ft_swap(int *a, int *b);
+void	ft_putstr(char *str);
+int		ft_strlen(char *str);
+int		ft_strcmp(char *s1, char *s2);
 
-	count = 0;
-	while (str[count])
-		count++;
-	return (count);
-}
+#endif
