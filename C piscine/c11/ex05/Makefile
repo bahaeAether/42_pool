@@ -6,34 +6,37 @@
 #    By: baboulou <baboulou@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/23 22:30:09 by baboulou          #+#    #+#              #
-#    Updated: 2022/06/27 08:02:38 by baboulou         ###   ########.fr        #
+#    Updated: 2022/06/29 22:12:17 by baboulou         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= srcs/ft_putchar.c srcs/ft_putstr.c srcs/ft_strcmp.c srcs/ft_strlen.c srcs/ft_swap.c
+SRCS	= srcs/do.c srcs/op.c
 
 OBJS	= ${SRCS:.c=.o}
 
-NAME	= libft.a
+LIB	= libdoop.a
+
+EXE		= do-op
 
 CC		= gcc
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -I./includes
 
 .c.o:
-			${CC} ${CFLAGS} -c -I./includes $< -o ${<:.c=.o}
+			@ ${CC} ${CFLAGS} -c $^ -o ${<:.c=.o}
 
-${NAME}:	${OBJS}
-			ar -rc ${NAME} $^
-			ranlib ${NAME}
+${LIB}:		${OBJS}
+			@ ar -rc ${LIB} $^
+			@ ranlib ${LIB}
+			@ ${CC} ${CFLAGS} main.c -L. -ldoop -o ${EXE}
 
-all:		${NAME}
+all:		${LIB}
 
 clean:
-			rm -f ${OBJS}
+			@ rm -f ${OBJS}
 
 fclean:		clean
-			rm -f ${NAME}
+			@ rm -f ${LIB} ${EXE}
 
 re:			fclean all
 
